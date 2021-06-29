@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085A6625268A792D001A8663 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A6624268A792D001A8663 /* HomeView.swift */; };
 		088567F4268A13950014D249 /* NetMusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088567F3268A13950014D249 /* NetMusicPlayerApp.swift */; };
 		088567F6268A13950014D249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088567F5268A13950014D249 /* ContentView.swift */; };
 		088567F8268A13960014D249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088567F7268A13960014D249 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		085A6624268A792D001A8663 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		088567F0268A13950014D249 /* NetMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088567F3268A13950014D249 /* NetMusicPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetMusicPlayerApp.swift; sourceTree = "<group>"; };
 		088567F5268A13950014D249 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		085A6623268A78E2001A8663 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				085A6624268A792D001A8663 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		088567E7268A13950014D249 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		088567F2268A13950014D249 /* NetMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				085A6623268A78E2001A8663 /* Views */,
 				088567F3268A13950014D249 /* NetMusicPlayerApp.swift */,
 				088567F5268A13950014D249 /* ContentView.swift */,
 				088567F7268A13960014D249 /* Assets.xcassets */,
@@ -259,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085A6625268A792D001A8663 /* HomeView.swift in Sources */,
 				088567F6268A13950014D249 /* ContentView.swift in Sources */,
 				088567F4268A13950014D249 /* NetMusicPlayerApp.swift in Sources */,
 			);
