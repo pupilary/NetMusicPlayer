@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @ObservedObject var bannerStore: BannerStore = BannerStore()
+    
     @State private var selection = 1
     @State private var columns = Array(repeating: GridItem(.flexible(), spacing: 15.0), count: 2)
     
@@ -21,8 +23,8 @@ struct HomeView: View {
                // .padding(.horizontal)
                 // Carousel List...
                 TabView(selection: $selection) {
-                    ForEach(0...5, id: \.self) { index in
-                        Image("Images/album")
+                    ForEach(bannerStore.banners.indices, id: \.self) { index in
+                        Image(bannerStore.banners[index].url)
                             .resizable()
                             .frame(height: self.selection == index ? 230.0 : 180.0)
                             .cornerRadius(15.0)
@@ -73,7 +75,7 @@ struct HomeView: View {
                 .padding(.horizontal)
                 .padding(.top, 25.0)
                 LazyVGrid(columns: columns, spacing: 25.0) {
-                    ForEach(1...7, id: \.self) { index in
+                    ForEach(1...10, id: \.self) { index in
                         // GridView...
                         GridView(index: index, columns: $columns)
                     }
@@ -121,7 +123,7 @@ private struct GridView: View {
             if columns.count == 2 {
                 VStack(spacing: 15.0) {
                     ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
-                        Image("Images/album")
+                        Image("Images/2022-bmw-m5-cs-\(index)")
                             .resizable()
                             .frame(height: 250.0)
                             .cornerRadius(15.0)

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0818D369268B575000E3FBDB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0818D368268B575000E3FBDB /* Alamofire */; };
+		0818D36D268C380F00E3FBDB /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818D36C268C380F00E3FBDB /* Banner.swift */; };
+		0818D36F268C383100E3FBDB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818D36E268C383100E3FBDB /* Song.swift */; };
 		085A6625268A792D001A8663 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085A6624268A792D001A8663 /* HomeView.swift */; };
 		088567F4268A13950014D249 /* NetMusicPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088567F3268A13950014D249 /* NetMusicPlayerApp.swift */; };
 		088567F6268A13950014D249 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088567F5268A13950014D249 /* ContentView.swift */; };
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0818D36C268C380F00E3FBDB /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		0818D36E268C383100E3FBDB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		085A6624268A792D001A8663 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		088567F0268A13950014D249 /* NetMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088567F3268A13950014D249 /* NetMusicPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetMusicPlayerApp.swift; sourceTree = "<group>"; };
@@ -54,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0818D369268B575000E3FBDB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0818D36A268C377E00E3FBDB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0818D36C268C380F00E3FBDB /* Banner.swift */,
+				0818D36E268C383100E3FBDB /* Song.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0818D36B268C378600E3FBDB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		085A6623268A78E2001A8663 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +127,8 @@
 		088567F2268A13950014D249 /* NetMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				0818D36A268C377E00E3FBDB /* Models */,
+				0818D36B268C378600E3FBDB /* ViewModels */,
 				085A6623268A78E2001A8663 /* Views */,
 				088567F3268A13950014D249 /* NetMusicPlayerApp.swift */,
 				088567F5268A13950014D249 /* ContentView.swift */,
@@ -157,6 +181,9 @@
 			dependencies = (
 			);
 			name = NetMusicPlayer;
+			packageProductDependencies = (
+				0818D368268B575000E3FBDB /* Alamofire */,
+			);
 			productName = NetMusicPlayer;
 			productReference = 088567F0268A13950014D249 /* NetMusicPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +255,9 @@
 				Base,
 			);
 			mainGroup = 088567E7268A13950014D249;
+			packageReferences = (
+				0818D367268B575000E3FBDB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 088567F1268A13950014D249 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				085A6625268A792D001A8663 /* HomeView.swift in Sources */,
+				0818D36D268C380F00E3FBDB /* Banner.swift in Sources */,
 				088567F6268A13950014D249 /* ContentView.swift in Sources */,
 				088567F4268A13950014D249 /* NetMusicPlayerApp.swift in Sources */,
+				0818D36F268C383100E3FBDB /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +624,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0818D367268B575000E3FBDB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0818D368268B575000E3FBDB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0818D367268B575000E3FBDB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 088567E8268A13950014D249 /* Project object */;
 }
