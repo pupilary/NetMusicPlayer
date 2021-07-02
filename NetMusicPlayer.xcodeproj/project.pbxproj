@@ -17,6 +17,11 @@
 		088567FB268A13960014D249 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 088567FA268A13960014D249 /* Preview Assets.xcassets */; };
 		08856806268A13960014D249 /* NetMusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08856805268A13960014D249 /* NetMusicPlayerTests.swift */; };
 		08856811268A13960014D249 /* NetMusicPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08856810268A13960014D249 /* NetMusicPlayerUITests.swift */; };
+		08F03C26268D16D800BA711A /* SongStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F03C25268D16D800BA711A /* SongStore.swift */; };
+		08F03C28268D7C3D00BA711A /* BannerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F03C27268D7C3D00BA711A /* BannerStore.swift */; };
+		08F03C2B268E198600BA711A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 08F03C2A268E198600BA711A /* SwiftyJSON */; };
+		08F03C2F268E869F00BA711A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 08F03C2E268E869F00BA711A /* SDWebImageSwiftUI */; };
+		08F03C36268E87D100BA711A /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F03C35268E87D100BA711A /* Commons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,9 @@
 		0885680C268A13960014D249 /* NetMusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetMusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08856810268A13960014D249 /* NetMusicPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetMusicPlayerUITests.swift; sourceTree = "<group>"; };
 		08856812268A13960014D249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08F03C25268D16D800BA711A /* SongStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SongStore.swift; path = NetMusicPlayer/ViewModels/SongStore.swift; sourceTree = SOURCE_ROOT; };
+		08F03C27268D7C3D00BA711A /* BannerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerStore.swift; path = NetMusicPlayer/ViewModels/BannerStore.swift; sourceTree = SOURCE_ROOT; };
+		08F03C35268E87D100BA711A /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F03C2F268E869F00BA711A /* SDWebImageSwiftUI in Frameworks */,
+				08F03C2B268E198600BA711A /* SwiftyJSON in Frameworks */,
 				0818D369268B575000E3FBDB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,13 +97,6 @@
 				0818D36E268C383100E3FBDB /* Song.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		0818D36B268C378600E3FBDB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		085A6623268A78E2001A8663 /* Views */ = {
@@ -127,9 +130,10 @@
 		088567F2268A13950014D249 /* NetMusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				08F03C2C268E850C00BA711A /* ViewModels */,
 				0818D36A268C377E00E3FBDB /* Models */,
-				0818D36B268C378600E3FBDB /* ViewModels */,
 				085A6623268A78E2001A8663 /* Views */,
+				08F03C32268E878C00BA711A /* Tools */,
 				088567F3268A13950014D249 /* NetMusicPlayerApp.swift */,
 				088567F5268A13950014D249 /* ContentView.swift */,
 				088567F7268A13960014D249 /* Assets.xcassets */,
@@ -165,6 +169,23 @@
 			path = NetMusicPlayerUITests;
 			sourceTree = "<group>";
 		};
+		08F03C2C268E850C00BA711A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				08F03C25268D16D800BA711A /* SongStore.swift */,
+				08F03C27268D7C3D00BA711A /* BannerStore.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		08F03C32268E878C00BA711A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				08F03C35268E87D100BA711A /* Commons.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +204,8 @@
 			name = NetMusicPlayer;
 			packageProductDependencies = (
 				0818D368268B575000E3FBDB /* Alamofire */,
+				08F03C2A268E198600BA711A /* SwiftyJSON */,
+				08F03C2E268E869F00BA711A /* SDWebImageSwiftUI */,
 			);
 			productName = NetMusicPlayer;
 			productReference = 088567F0268A13950014D249 /* NetMusicPlayer.app */;
@@ -257,6 +280,8 @@
 			mainGroup = 088567E7268A13950014D249;
 			packageReferences = (
 				0818D367268B575000E3FBDB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				08F03C29268E198600BA711A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				08F03C2D268E869F00BA711A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 088567F1268A13950014D249 /* Products */;
 			projectDirPath = "";
@@ -304,7 +329,10 @@
 				0818D36D268C380F00E3FBDB /* Banner.swift in Sources */,
 				088567F6268A13950014D249 /* ContentView.swift in Sources */,
 				088567F4268A13950014D249 /* NetMusicPlayerApp.swift in Sources */,
+				08F03C36268E87D100BA711A /* Commons.swift in Sources */,
+				08F03C26268D16D800BA711A /* SongStore.swift in Sources */,
 				0818D36F268C383100E3FBDB /* Song.swift in Sources */,
+				08F03C28268D7C3D00BA711A /* BannerStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +662,22 @@
 				minimumVersion = 5.4.3;
 			};
 		};
+		08F03C29268E198600BA711A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		08F03C2D268E869F00BA711A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +685,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0818D367268B575000E3FBDB /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		08F03C2A268E198600BA711A /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08F03C29268E198600BA711A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		08F03C2E268E869F00BA711A /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08F03C2D268E869F00BA711A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

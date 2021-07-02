@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomeView: View {
     
-    @ObservedObject var bannerStore: BannerStore = BannerStore()
-    
-    @State private var selection = 1
     @State private var columns = Array(repeating: GridItem(.flexible(), spacing: 15.0), count: 2)
     
     var body: some View {
@@ -20,23 +18,13 @@ struct HomeView: View {
                 HStack {
                     SearchView()
                 }
-               // .padding(.horizontal)
+                // .padding(.horizontal)
                 // Carousel List...
-                TabView(selection: $selection) {
-                    ForEach(bannerStore.banners.indices, id: \.self) { index in
-                        Image(bannerStore.banners[index].url)
-                            .resizable()
-                            .frame(height: self.selection == index ? 230.0 : 180.0)
-                            .cornerRadius(15.0)
-                            .padding(.horizontal)
-                            // for identifying current index...
-                            .tag(index)
-                    }
-                }
-                .frame(height: 230.0)
-                .padding(.top, 25.0)
-                .tabViewStyle(PageTabViewStyle())
-                .animation(.easeOut)
+                BannerView()
+                    .frame(height: 230.0)
+                    .padding(.top, 25.0)
+                    .tabViewStyle(PageTabViewStyle())
+                    .animation(.easeOut)
                 // 推荐歌单
                 HStack {
                     Text("推荐歌单")
@@ -212,5 +200,29 @@ private struct GridView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+struct BannerView: View {
+    
+    @ObservedObject var bannerStore: BannerStore = BannerStore()
+    
+    @State private var selection = 1
+    
+    var body: some View {
+        TabView(selection: $selection) {
+            ForEach(bannerStore.banners.indices, id: \.self) { index in
+                WebImage(url: URL(string: "https://y.qq.com/musicmac/v6/album/detail.html?albumid=18889348"))
+                    .resizable()
+                    .placeholder(
+                        Image("Images/album")
+                    )
+                    .frame(height: self.selection == index ? 230.0 : 180.0)
+                    .cornerRadius(15.0)
+                    .padding(.horizontal)
+                    // for identifying current index...
+                    .tag(index)
+            }
+        }
     }
 }

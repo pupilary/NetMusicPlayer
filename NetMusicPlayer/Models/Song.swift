@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Song: Identifiable {
+    let id: Int
+    let name: String
+}
